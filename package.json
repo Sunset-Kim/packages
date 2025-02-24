@@ -13,19 +13,22 @@
       "types": "./dist/types/index.d.ts"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Sunset-Kim/packages"
   },
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "release-package": "npm run build && npx changeset publish"
   },
   "author": "sunset-kim",
   "license": "MIT",
   "devDependencies": {
+    "@changesets/cli": "^2.28.1",
     "rollup": "^4.17.2",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-typescript2": "^0.36.0",
